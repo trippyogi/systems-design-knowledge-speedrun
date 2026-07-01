@@ -1,8 +1,10 @@
 # Systems Design Speedrun
 
-An opinionated, drill-based path for getting useful at systems design quickly.
+A build-first, teach-first systems design speedrun for people who want to start today.
 
-This repo is not a generic “learn anything” template. It is a systems-design workout plan built around recurring moves from interviews and production reviews:
+This is not a reasonable study plan. It is an expertise-compression protocol: build a small system, break it on purpose, explain the tradeoff, compare against expert references, then ship the next version.
+
+This repo is not a generic “learn anything” template. It is a systems-design workout plan built around recurring moves from interviews, design reviews, incident reviews, and real production systems:
 
 1. **Frame the product** — users, use cases, non-goals, and hard constraints.
 2. **Put numbers on it** — QPS, fanout, storage, bandwidth, cache size, partitions.
@@ -13,28 +15,31 @@ This repo is not a generic “learn anything” template. It is a systems-design
 
 ## Start here: the direct outline
 
-If you have one week, follow this exact order:
+If you want to start today, follow this exact order:
 
-1. [Speedrun map](roadmap/00-speedrun-map.md) — the mental model and skill tree.
-2. [Systems design playbook](concepts/systems-design-playbook.md) — the reusable design moves.
-3. [Concrete resource map](resources/concrete-resource-map.md) — what to read/watch/build first.
-4. [7-day core sprint](roadmap/01-7-day-core.md) — daily drills with deliverables.
-5. [URL shortener kata](drills/url-shortener.md) — first full pass.
-6. [Design review rubric](artifact-templates/design-review-rubric.md) — score the design and find gaps.
+1. [Day zero build](roadmap/00-day-zero-build.md) — build something small before you feel ready.
+2. [Systems design playbook](concepts/systems-design-playbook.md) — use the reusable design moves while building.
+3. [URL shortener kata](drills/url-shortener.md) or [rate limiter kata](drills/rate-limiter.md) — first full rep.
+4. [Concrete resource map](resources/concrete-resource-map.md) — read only what answers your current design question.
+5. [Design review rubric](artifact-templates/design-review-rubric.md) — score the design and find the next bottleneck.
+6. [7-day core sprint](roadmap/01-7-day-core.md) — repeat the loop daily.
 
 Then repeat with rate limiter, news feed, chat, webhook platform, and metrics ingestion.
 
-## The simplified loop
+## The exceptional loop
 
 ```mermaid
 flowchart LR
-  A[Read one primitive] --> B[Apply it to one kata]
-  B --> C[Break it: scale + failure + abuse]
-  C --> D[Write the tradeoff]
-  D --> B
+  A[Build a thin slice] --> B[Break it on purpose]
+  B --> C[Explain/teach the design]
+  C --> D[Compare with expert references]
+  D --> E[Ship the next version]
+  E --> A
 ```
 
-Short version: **learn one move, use it, break it, explain the tradeoff.**
+Short version: **build, break, teach, compare, ship again.**
+
+Reading is not the first step. Reading is ammunition for the system you are already building.
 
 ## What makes this systems-design-specific
 
@@ -48,4 +53,6 @@ Short version: **learn one move, use it, break it, explain the tradeoff.**
 
 ## What you should be able to do after the speedrun
 
-After 7 days, you should be able to run a complete systems design conversation from requirements to tradeoffs. After 30 days, you should be able to handle common interview prompts and write pragmatic one-page designs. After 90 days, you should have a portfolio of build projects, ADRs, postmortems, and reviewed designs.
+After day zero, you should have a running toy system plus a design note. After 7 days, you should have 5-7 shipped reps: small systems or major revisions, each with pressure tests, tradeoffs, and teach-backs. After 30 days, you should have a public portfolio of systems, incident-style writeups, ADRs, and expert-comparison notes.
+
+The aim is not to become “interview ready.” The aim is to compress the distance between naive builder and serious systems thinker as aggressively as possible.

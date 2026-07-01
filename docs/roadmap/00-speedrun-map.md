@@ -1,5 +1,14 @@
 # Systems Design Speedrun Map
 
+This map is not a prerequisite. Build first, then use the map to name what you just ran into.
+
+The fastest path is not concept coverage. It is repeated contact with real design pressure:
+
+1. Ship a tiny version.
+2. Hit a bottleneck, failure mode, abuse case, or cost wall.
+3. Learn the exact primitive that explains it.
+4. Redesign and teach the delta.
+
 ## The shortest useful mental model
 
 Every systems design problem is a loop:

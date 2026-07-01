@@ -2,11 +2,11 @@
 
 Assumption: 90 to 120 focused minutes per day.
 
-The daily loop is intentionally short:
+The daily loop is intentionally aggressive:
 
-> **Read one primitive → apply it to one kata → break it → write the tradeoff.**
+> **Build a thin slice → break it → teach it → compare with experts → ship the next version.**
 
-By the end of the week you should have one polished design and several rough but useful artifacts.
+Start with [Day zero build](00-day-zero-build.md). By the end of the week you should have 5-7 shipped reps, each with a pressure test, tradeoff note, and teach-back.
 
 ## Day 1 — Requirements, APIs, and baseline diagram
 

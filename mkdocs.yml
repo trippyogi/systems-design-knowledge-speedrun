@@ -5,6 +5,7 @@ site_description: A fast, practical systems design learning repo
 nav:
   - Home: index.md
   - Roadmap:
+      - Day Zero Build: roadmap/00-day-zero-build.md
       - Speedrun Map: roadmap/00-speedrun-map.md
       - 7-Day Core: roadmap/01-7-day-core.md
       - 30-Day Sprint: roadmap/02-30-day-interview-production.md

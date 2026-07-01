@@ -11,6 +11,7 @@ nav:
       - 90-Day Builder: roadmap/03-90-day-builder.md
       - Knowledge Method: roadmap/99-knowledge-speedrun-method.md
   - Concepts:
+      - Systems Design Playbook: concepts/systems-design-playbook.md
       - Capacity Estimation: concepts/capacity-estimation.md
       - Data Modeling: concepts/data-modeling.md
       - Caching: concepts/caching.md
@@ -20,6 +21,8 @@ nav:
       - Security and Cost: concepts/security-cost-abuse.md
       - API Design: concepts/api-design.md
       - Pattern Cheatsheet: concepts/pattern-cheatsheet.md
+  - Resources:
+      - Concrete Resource Map: resources/concrete-resource-map.md
   - Drills: drills/README.md
   - Templates:
       - One-page Design: artifact-templates/one-page-design-template.md

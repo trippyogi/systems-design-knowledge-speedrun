@@ -1,0 +1,89 @@
+# One-Page System Design Template
+
+## 1. Problem
+
+What are we building, for whom, and why?
+
+## 2. Requirements
+
+Functional:
+
+- 
+
+Non-functional:
+
+- Latency:
+- Availability:
+- Consistency:
+- Durability:
+- Security/privacy:
+- Cost:
+
+Non-goals:
+
+- 
+
+## 3. Assumptions and estimates
+
+| Metric | Estimate | Reasoning |
+|---|---:|---|
+| DAU |  |  |
+| Read QPS |  |  |
+| Write QPS |  |  |
+| Storage/day |  |  |
+| Peak multiplier |  |  |
+
+## 4. API sketch
+
+```http
+METHOD /path
+```
+
+## 5. Data model
+
+| Entity | Key fields | Access patterns |
+|---|---|---|
+|  |  |  |
+
+## 6. Architecture
+
+```mermaid
+flowchart LR
+  Client --> LB[Load Balancer]
+  LB --> API[API Service]
+  API --> Cache[(Cache)]
+  API --> DB[(Primary DB)]
+  API --> Q[Queue]
+  Q --> W[Workers]
+  W --> OBJ[(Object Storage)]
+```
+
+## 7. Scaling plan
+
+- Read path:
+- Write path:
+- Hot keys:
+- Large objects:
+- Multi-region:
+
+## 8. Failure modes
+
+| Failure | User impact | Mitigation |
+|---|---|---|
+|  |  |  |
+
+## 9. Observability
+
+- SLIs:
+- Alerts:
+- Logs:
+- Traces:
+- Dashboards:
+
+## 10. Tradeoffs and alternatives
+
+Decision:
+
+Alternatives considered:
+
+Why this choice:

@@ -1,0 +1,33 @@
+site_name: Systems Design Speedrun
+docs_dir: docs
+site_dir: site
+site_description: A fast, practical systems design learning repo
+nav:
+  - Home: index.md
+  - Roadmap:
+      - Speedrun Map: roadmap/00-speedrun-map.md
+      - 7-Day Core: roadmap/01-7-day-core.md
+      - 30-Day Sprint: roadmap/02-30-day-interview-production.md
+      - 90-Day Builder: roadmap/03-90-day-builder.md
+      - Knowledge Method: roadmap/99-knowledge-speedrun-method.md
+  - Concepts:
+      - Capacity Estimation: concepts/capacity-estimation.md
+      - Data Modeling: concepts/data-modeling.md
+      - Caching: concepts/caching.md
+      - Queues and Streams: concepts/queues-streams-async.md
+      - Consistency: concepts/consistency-replication-partitioning.md
+      - Reliability: concepts/reliability-sre.md
+      - Security and Cost: concepts/security-cost-abuse.md
+      - API Design: concepts/api-design.md
+      - Pattern Cheatsheet: concepts/pattern-cheatsheet.md
+  - Drills: drills/README.md
+  - Templates:
+      - One-page Design: artifact-templates/one-page-design-template.md
+      - Interview Template: artifact-templates/system-design-interview-template.md
+      - ADR Template: artifact-templates/adr-template.md
+      - Review Rubric: artifact-templates/design-review-rubric.md
+      - Failure Mode Table: artifact-templates/failure-mode-table.md
+      - SLO Template: artifact-templates/slo-template.md
+      - Postmortem Template: artifact-templates/postmortem-template.md
+  - Projects: projects/starter-projects.md
+  - Visuals: visuals/README.md

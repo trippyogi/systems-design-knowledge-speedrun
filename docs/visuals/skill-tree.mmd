@@ -1,0 +1,46 @@
+flowchart TD
+  SD[Systems Design Speedrun]
+
+  SD --> F[Frame the Problem]
+  F --> F1[Users + Use Cases]
+  F --> F2[Functional Requirements]
+  F --> F3[Non-functional Requirements]
+  F --> F4[Non-goals]
+
+  SD --> E[Estimate]
+  E --> E1[QPS]
+  E --> E2[Storage]
+  E --> E3[Bandwidth]
+  E --> E4[Cache Size]
+
+  SD --> D[Data + APIs]
+  D --> D1[Access Patterns]
+  D --> D2[Schema]
+  D --> D3[Indexes]
+  D --> D4[API Contracts]
+
+  SD --> S[Scale]
+  S --> S1[Load Balancing]
+  S --> S2[Caching]
+  S --> S3[Queues]
+  S --> S4[Sharding]
+  S --> S5[Replication]
+
+  SD --> C[Coordinate]
+  C --> C1[Consistency]
+  C --> C2[Idempotency]
+  C --> C3[Retries + Timeouts]
+  C --> C4[Backpressure]
+
+  SD --> P[Production]
+  P --> P1[SLOs]
+  P --> P2[Observability]
+  P --> P3[Security]
+  P --> P4[Cost]
+  P --> P5[Runbooks]
+
+  SD --> X[Communicate]
+  X --> X1[C4]
+  X --> X2[ADRs]
+  X --> X3[Design Docs]
+  X --> X4[Rubrics]

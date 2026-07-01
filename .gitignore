@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# MkDocs output
+knowledge-speedrun-systems-design-site/
+site/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

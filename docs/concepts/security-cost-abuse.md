@@ -42,3 +42,15 @@ A design that scales but leaks data or bankrupts the business is not a good desi
 ## Design phrase
 
 > I would add guardrails before optimizing: authentication, authorization, tenant isolation, rate limits, audit logs, and cost visibility.
+
+## Recall questions
+
+<details><summary>Why is abuse a systems design concern?</summary>Abuse changes traffic shape, cost, capacity needs, and failure modes.</details>
+
+<details><summary>What is the difference between authentication and authorization?</summary>Authentication proves identity; authorization decides what that identity can do.</details>
+
+<details><summary>What should every public API define?</summary>Rate limits, quotas, auth model, audit logs, abuse signals, and data retention.</details>
+
+<details><summary>What is a noisy neighbor?</summary>A tenant or user whose load harms others sharing the same infrastructure.</details>
+
+<details><summary>What is a cost guardrail?</summary>A limit, alert, quota, or degradation rule that prevents runaway spend.</details>

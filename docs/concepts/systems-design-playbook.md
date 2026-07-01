@@ -140,3 +140,15 @@ Output: 2-4 ADR-style bullets or a full ADR for big choices.
 For every concept, ask:
 
 > What bottleneck, failure mode, or coordination problem does this solve, and what new cost does it introduce?
+
+## Recall questions
+
+<details><summary>What is the fastest way through a design prompt?</summary>Requirements → numbers → APIs/data → baseline → bottlenecks → failure modes → tradeoffs.</details>
+
+<details><summary>Why separate request path and async path?</summary>It clarifies latency-critical work versus retryable/background work.</details>
+
+<details><summary>What makes a design reviewable?</summary>Clear requirements, numbers, diagram, failure modes, observability, and defended tradeoffs.</details>
+
+<details><summary>What should you do after your first design?</summary>Attack it, run AI/adversarial review, compare with a worked solution, and revise.</details>
+
+<details><summary>What is the one-sentence test for any concept?</summary>What bottleneck, failure mode, or coordination problem does it solve, and what new cost does it introduce?</details>

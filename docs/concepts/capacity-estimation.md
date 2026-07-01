@@ -57,3 +57,15 @@ Design implication:
 - Treating storage as the only bottleneck
 - Not separating read path and write path
 - Giving precise-looking numbers without assumptions
+
+## Recall questions
+
+<details><summary>How do you convert events/day into average QPS?</summary>Divide by 86,400, then apply a peak multiplier for bursty traffic.</details>
+
+<details><summary>Why are rough numbers useful even when they are wrong?</summary>They reveal the likely first bottleneck and force architecture decisions to match scale.</details>
+
+<details><summary>What usually dominates media-heavy systems?</summary>Storage, bandwidth, CDN behavior, and object lifecycle costs.</details>
+
+<details><summary>What usually dominates feed/notification systems?</summary>Fanout and read/write amplification.</details>
+
+<details><summary>What should a sizing table change?</summary>At least one design decision: cache size, partition count, queue capacity, storage choice, or SLO.</details>

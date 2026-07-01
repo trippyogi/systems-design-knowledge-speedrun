@@ -61,3 +61,15 @@ Use idempotency keys for operations where retries could create duplicates:
 - Messages
 - Webhook deliveries
 - File uploads
+
+## Recall questions
+
+<details><summary>Why should APIs be idempotent where possible?</summary>Retries and duplicate client requests should not create duplicate side effects.</details>
+
+<details><summary>What belongs in an API sketch?</summary>Endpoint/message, caller, request/response shape, errors, latency target, auth, and idempotency behavior.</details>
+
+<details><summary>When should work be async?</summary>When it is slow, retryable, non-critical to the immediate response, or fanout-heavy.</details>
+
+<details><summary>What does pagination protect?</summary>Database, memory, latency, and clients from unbounded reads.</details>
+
+<details><summary>What should error responses help clients do?</summary>Know whether to retry, back off, fix input, re-authenticate, or stop.</details>

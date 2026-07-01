@@ -36,3 +36,15 @@
 | Event sourcing | Need full event history | Complex projections |
 | Leader-follower replication | Read scale + redundancy | Lag/failover |
 | Consistent hashing | Dynamic shard membership | Hot keys still possible |
+
+## Recall questions
+
+<details><summary>What is the point of a pattern?</summary>To solve a specific bottleneck, failure mode, or coordination problem while accepting a known cost.</details>
+
+<details><summary>What question should you ask before adding a pattern?</summary>What breaks without it, and what new operational burden does it introduce?</details>
+
+<details><summary>Why are queues not free?</summary>They add eventual consistency, retries, duplicates, backlog, and observability requirements.</details>
+
+<details><summary>Why are replicas not free?</summary>They add lag, failover behavior, and read-after-write confusion.</details>
+
+<details><summary>How do you practice a pattern?</summary>Add it to a kata, break it, write the tradeoff, then compare to a reference design.</details>

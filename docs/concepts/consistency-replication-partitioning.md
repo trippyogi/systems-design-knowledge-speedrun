@@ -40,3 +40,15 @@ Ask per operation, not for the whole system:
 ## Failure-mode prompt
 
 > What does the user see during replica lag, leader failover, network partition, and partial write failure?
+
+## Recall questions
+
+<details><summary>What is the practical question behind consistency?</summary>What stale or conflicting state can the user observe, and is that acceptable?</details>
+
+<details><summary>Where do you usually need strong consistency?</summary>Money, inventory, permissions, uniqueness, irreversible actions, and safety-critical state.</details>
+
+<details><summary>What does replication trade off?</summary>Availability/read scale against lag, failover complexity, and conflict handling.</details>
+
+<details><summary>Why is global strong consistency expensive?</summary>It requires coordination across distance, which increases latency and failure coupling.</details>
+
+<details><summary>What should you write for each operation?</summary>Consistency requirement, failure behavior, user-visible compromise, and recovery path.</details>

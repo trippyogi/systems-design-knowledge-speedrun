@@ -60,3 +60,15 @@ sequenceDiagram
 ## Idempotency rule
 
 Every retried operation should be safe to run more than once, or it should detect duplicates.
+
+## Recall questions
+
+<details><summary>What work should move off the request path?</summary>Slow, retryable, non-critical, fanout, analytics, notification, and enrichment work.</details>
+
+<details><summary>What does a queue usually force you to handle?</summary>Retries, duplicate delivery, idempotency, backlog, poison messages, and observability.</details>
+
+<details><summary>When is a stream better than a queue?</summary>When consumers need replayable ordered history or multiple independent consumers.</details>
+
+<details><summary>Why do retries cause outages?</summary>They can amplify load on an already failing dependency unless bounded with backoff/jitter.</details>
+
+<details><summary>What should every async design define?</summary>Delivery semantics, retry policy, DLQ behavior, idempotency key, ordering needs, and replay plan.</details>

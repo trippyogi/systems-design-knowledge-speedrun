@@ -68,3 +68,15 @@ Risks:
 ## Good interview phrase
 
 > I would cache this only after identifying the hot read path and defining acceptable staleness.
+
+## Recall questions
+
+<details><summary>When does cache-aside work best?</summary>Read-heavy data where misses can safely fall back to the source of truth.</details>
+
+<details><summary>What is a cache stampede?</summary>Many requests miss or expire the same key at once and overload the backing store.</details>
+
+<details><summary>Name two stampede mitigations.</summary>Request coalescing, jittered TTLs, stale-while-revalidate, early refresh, or hot-key replication.</details>
+
+<details><summary>When does write-through beat cache-aside?</summary>When newly written data is read immediately and write-path complexity is acceptable.</details>
+
+<details><summary>What should you define for every cache?</summary>Key format, TTL, invalidation, stale-read tolerance, cold-start behavior, and fallback path.</details>

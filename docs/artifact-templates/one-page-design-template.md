@@ -68,9 +68,11 @@ flowchart LR
 
 ## 8. Failure modes
 
-| Failure | User impact | Mitigation |
-|---|---|---|
-|  |  |  |
+Every design needs this section. Do not move on until at least five realistic failures are named.
+
+| Failure | Trigger | User impact | Detection | Mitigation/recovery |
+|---|---|---|---|---|
+|  |  |  |  |  |
 
 ## 9. Observability
 
@@ -87,3 +89,22 @@ Decision:
 Alternatives considered:
 
 Why this choice:
+
+What changes at 10x:
+
+## 11. Teach-back
+
+Write 10 lines or record a 5-minute explanation:
+
+- What the system does:
+- What the hardest constraint is:
+- What breaks first:
+- What tradeoff you chose:
+- What you would revisit next:
+
+## 12. Review loop
+
+- AI review completed:
+- Worked solution diff completed:
+- Weakest section rewritten:
+- Principle to remember next time:

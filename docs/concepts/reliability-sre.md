@@ -39,3 +39,15 @@ Reliability is about whether the system does what users expect, not just whether
 - Business metrics: checkout completed, messages delivered, uploads processed
 - Traces for cross-service requests
 - Structured logs with request IDs
+
+## Recall questions
+
+<details><summary>What is an SLI?</summary>A measured signal of user experience, such as success rate or latency.</details>
+
+<details><summary>What is an SLO?</summary>A target for an SLI over a time window, used to guide reliability decisions.</details>
+
+<details><summary>Why are timeouts mandatory?</summary>Without timeouts, slow dependencies can exhaust threads, queues, and connection pools.</details>
+
+<details><summary>What should a failure-mode table include?</summary>Trigger, user impact, detection, mitigation, recovery, and owner.</details>
+
+<details><summary>What is graceful degradation?</summary>Preserving the most important user flows while reducing optional or expensive functionality.</details>

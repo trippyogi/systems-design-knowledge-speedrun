@@ -40,3 +40,15 @@ Denormalize when read latency or scale demands it, but write down:
 - Update mechanism
 - Staleness tolerance
 - Repair process
+
+## Recall questions
+
+<details><summary>What comes before choosing a database?</summary>Access patterns: reads, writes, filters, ordering, consistency, retention, and growth.</details>
+
+<details><summary>Why can denormalization be correct?</summary>It can make hot reads cheap, at the cost of write complexity and consistency risk.</details>
+
+<details><summary>What is a hot partition?</summary>A key or shard receiving disproportionate traffic, limiting scale despite total capacity.</details>
+
+<details><summary>What belongs in an access-pattern table?</summary>Operation, caller, frequency, latency target, consistency requirement, and index/partition choice.</details>
+
+<details><summary>When should you revisit the data model?</summary>When a new query, scale target, retention need, or consistency boundary appears.</details>

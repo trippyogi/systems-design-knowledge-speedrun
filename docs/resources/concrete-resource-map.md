@@ -4,7 +4,7 @@ This is the recommended order for diving in. Each resource is attached to a syst
 
 ## Day-zero setup
 
-Read first:
+Read only after your first 25-minute rep:
 
 - C4 model overview: https://c4model.com/
 - Architecture Decision Records: https://adr.github.io/
@@ -12,8 +12,8 @@ Read first:
 
 Do:
 
-- Draw one C4 container diagram for an app you already understand.
-- Write one ADR for a real or hypothetical design choice.
+- Draw one C4 container diagram for the system you just attempted.
+- Write one ADR for the biggest choice you made.
 - Define one user-facing SLO.
 
 ## 1. Requirements and design conversation
@@ -55,7 +55,7 @@ Deliverable:
 
 Read/watch:
 
-- Designing Data-Intensive Applications reference page: https://dataintensive.net/
+- Designing Data-Intensive Applications reference page: https://dataintensive.net/ — especially chapters 2, 3, and 4 for data models, storage, and encoding.
 - PostgreSQL indexes documentation: https://www.postgresql.org/docs/current/indexes.html
 - DynamoDB design guide: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html
 
@@ -108,6 +108,7 @@ Deliverable:
 
 Read/watch:
 
+- Designing Data-Intensive Applications: chapters 5 and 9 for replication, consistency, and consensus.
 - MIT 6.5840 Distributed Systems schedule: https://pdos.csail.mit.edu/6.824/schedule.html
 - Martin Kleppmann, transactions/consistency talks: https://martin.kleppmann.com/talks.html
 - Jepsen analyses for failure intuition: https://jepsen.io/analyses
@@ -130,6 +131,7 @@ Read/watch:
 - Google SRE workbook: https://sre.google/workbook/table-of-contents/
 - OpenTelemetry overview: https://opentelemetry.io/docs/what-is-opentelemetry/
 - AWS Builders Library: timeouts, retries, and backoff: https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/
+- AWS Builders Library index: https://aws.amazon.com/builders-library/
 
 Apply to:
 
@@ -156,6 +158,35 @@ Apply to:
 Deliverable:
 
 - Abuse cases, quota model, tenant isolation plan, audit logging, and cost guardrails.
+
+## Drill → reality diff
+
+After solving a drill, compare your design with one real-world article or case study:
+
+| Drill | Reality diff target |
+|---|---|
+| URL shortener | Compare your cache/redirect path against CDN and edge-caching docs from Cloudflare or AWS. |
+| Rate limiter | Compare against Cloudflare/AWS/API-gateway rate limiting writeups and note fairness vs latency tradeoffs. |
+| News feed | Compare against public Instagram/Twitter/Meta feed architecture writeups or High Scalability case studies. |
+| Chat | Compare against Discord/Slack/WebSocket scaling posts and message ordering discussions. |
+| Webhook platform | Compare against Stripe/GitHub webhook docs: retries, signatures, idempotency, replay. |
+| Metrics ingestion | Compare against Prometheus/OpenTelemetry/Kafka ingestion architectures. |
+
+The artifact is a delta note:
+
+- What did your design miss?
+- What did the real system optimize for that you ignored?
+- What did the real system accept as a tradeoff?
+- What will you change in the second pass?
+
+## Interview lane
+
+Use these only if your goal is interview performance:
+
+- Alex Xu, System Design Interview Vol. 1: https://bytebytego.com/
+- Hello Interview system design writeups: https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction
+
+Treat interview resources as prompt practice, not as a substitute for building and breaking systems.
 
 ## How to use resources without getting stuck
 

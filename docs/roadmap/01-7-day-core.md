@@ -23,10 +23,12 @@ Do:
 2. Write functional requirements, non-goals, and top non-functional requirements.
 3. Sketch APIs: create short URL, redirect, analytics lookup.
 4. Draw a baseline architecture with request path and async path separated.
+5. Run the AI design-review prompt.
+6. Write a 10-line teach-back.
 
 Deliverable:
 
-- `docs/drills/solutions/url-shortener.md` with requirements, API sketch, and baseline diagram.
+- Your own solution file with requirements, API sketch, baseline diagram, AI-review notes, and teach-back.
 
 ## Day 2 — Capacity estimation and first bottleneck
 
@@ -38,15 +40,20 @@ Read:
 - System Design Primer estimation section: https://github.com/donnemartin/system-design-primer#back-of-the-envelope-estimation
 - Latency numbers: https://gist.github.com/jboner/2841832
 
+Memory rep:
+
+- Redesign yesterday’s URL shortener from memory in 10 minutes before reading.
+
 Do:
 
 1. Estimate redirects/sec, creates/sec, storage/year, bandwidth, and cache working set.
 2. Name the first bottleneck at 10x scale.
 3. Revise the URL shortener architecture using the numbers.
+4. Diff the revision against yesterday’s design.
 
 Deliverable:
 
-- A sizing table and one paragraph: “The first thing that breaks is…”
+- A sizing table, before/after diff, and one paragraph: “The first thing that breaks is…”
 
 ## Day 3 — Data model, indexes, and consistency boundary
 
@@ -58,15 +65,20 @@ Read:
 - PostgreSQL indexes: https://www.postgresql.org/docs/current/indexes.html
 - DynamoDB NoSQL design guide: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html
 
+Memory rep:
+
+- Recreate yesterday’s sizing table from memory, then check it.
+
 Do:
 
 1. Create an entity/access-pattern table for URL shortener.
 2. Choose primary keys and indexes.
 3. Decide what needs strong consistency: slug creation, redirect reads, analytics counters.
+4. Run AI review only on the data model.
 
 Deliverable:
 
-- Entity table + access pattern table + consistency notes.
+- Entity table + access pattern table + consistency notes + weakest data-model critique.
 
 ## Day 4 — Caching, CDN, and hot key behavior
 
@@ -78,16 +90,21 @@ Read:
 - Redis cache-aside pattern: https://redis.io/learn/howtos/solutions/caching-architecture/cache-aside
 - Cloudflare CDN explainer: https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
 
+Memory rep:
+
+- Redesign the Day 1 URL shortener from memory in 10 minutes, then compare against your current version.
+
 Do:
 
 1. Add cache-aside for slug redirects.
 2. Define cache keys, TTL, negative caching, and invalidation behavior.
 3. Handle celebrity/hot-link traffic and cache cold starts.
 4. Write an ADR: cache-aside vs write-through.
+5. Add one recall question you missed to your notes.
 
 Deliverable:
 
-- `docs/adr/0001-cache-strategy.md`.
+- `docs/adr/0001-cache-strategy.md` + before/after design diff.
 
 ## Day 5 — Queues, retries, and idempotency
 
@@ -99,15 +116,20 @@ Read:
 - AWS Builders Library on retries/backoff: https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/
 - SQS visibility timeout: https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html
 
+Memory rep:
+
+- Explain cache-aside vs write-through in 90 seconds without notes.
+
 Do:
 
 1. Move analytics/event processing off the redirect path.
 2. Add idempotency keys or dedupe logic.
 3. Define retry, dead-letter queue, and replay behavior.
+4. Break the queue: worker crash, duplicate event, 30-minute backlog.
 
 Deliverable:
 
-- Sequence diagram: redirect request → event enqueue → analytics worker → aggregate update.
+- Sequence diagram: redirect request → event enqueue → analytics worker → aggregate update, plus retry/DLQ policy.
 
 ## Day 6 — Failure modes, abuse, and recovery
 
@@ -119,15 +141,20 @@ Read:
 - [Security, cost, and abuse](../concepts/security-cost-abuse.md).
 - OWASP API Security Top 10: https://owasp.org/API-Security/editions/2023/en/0x11-t10/
 
+Memory rep:
+
+- Rebuild the full architecture from memory in 10 minutes.
+
 Do:
 
 1. Fill out a failure-mode table for database outage, cache outage, queue backlog, bad deploy, hot key, and bot abuse.
 2. Add rate limits and abuse controls.
 3. Define backup/restore and rollback expectations.
+4. Run AI review asking only: “What failure mode did I miss?”
 
 Deliverable:
 
-- Failure mode table with detection, mitigation, and recovery.
+- Failure mode table with detection, mitigation, recovery, and one added failure from review.
 
 ## Day 7 — Review-ready design
 
@@ -144,11 +171,13 @@ Do:
 1. Turn the URL shortener artifacts into a polished one-page design.
 2. Add SLOs, dashboard signals, and alerts.
 3. Score the design with the rubric.
-4. Write three gaps to study next.
+4. Compare against the [worked URL shortener solution](../drills/solutions/url-shortener.md).
+5. Write or record a 5-minute teach-back.
+6. Write three gaps to study next.
 
 Deliverable:
 
-- One complete design doc + self-review.
+- One complete design doc + self-review + worked-solution diff + teach-back.
 
 ## Minimum viable week
 
